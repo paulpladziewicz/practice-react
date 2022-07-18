@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "text": "cook",
+      "completed": 0
+    },
+    {
+      "id": 2,
+      "text": "clean living room",
+      "completed": 0
+    },
+    {
+      "id": 3,
+      "text": "wash dishes",
+      "completed": 0
+    },
+    {
+      "id": 4,
+      "text": "make beds",
+      "completed": 0
+    },
+    {
+      "id": 5,
+      "text": "take out trash",
+      "completed": 0
+    }
+  ]
+}
