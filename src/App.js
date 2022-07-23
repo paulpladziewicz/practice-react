@@ -1,5 +1,4 @@
-// import { Todo } from './components/Todo'
-import Todo from './components/Todo'
+import { Todo } from './components/Todo'
 
 const arr = ['cook', 'clean living room', 'wash dishes', 'make beds', 'take out trash'];
 
