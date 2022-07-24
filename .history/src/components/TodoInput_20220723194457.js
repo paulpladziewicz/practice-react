@@ -1,5 +1,4 @@
 // Notes: revisit event object/ e.target
-// destructuring two values: state and function; use function to update state.
 
 import React, { useState } from "react" // import react and specifically useState
 
@@ -7,7 +6,7 @@ const TodoInput = () => {
     // include input and setInput
     // when you use useState, you give it an initial string
     // 
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState();
     console.log(input);
     const handleOnChange = (e) => {
         // console.log('text entered changed');

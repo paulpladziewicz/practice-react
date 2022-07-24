@@ -1,5 +1,5 @@
 // Notes: revisit event object/ e.target
-// destructuring two values: state and function; use function to update state.
+// 
 
 import React, { useState } from "react" // import react and specifically useState
 

@@ -9,6 +9,7 @@ const arr = ['cook', 'clean living room', 'wash dishes', 'make beds', 'take out 
 function App() {
   const [data, setData] = useState([]) //useState should have an empty array as param.
   console.log(data);
+
   useEffect(() => {
     fetch('http://paulpladziewicz.s3-website.us-east-2.amazonaws.com/data.json')
       .then(res => res.json())

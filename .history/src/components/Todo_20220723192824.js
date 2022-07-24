@@ -11,7 +11,7 @@
 const Todo = (props) => {
     return (
         <li>{props.item}
-            <input type='checkbox' />
+            <input></input>
             <button>Edit</button>
             <button>Update</button>
             <button>Delete</button>
