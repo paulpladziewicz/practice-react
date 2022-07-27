@@ -6,19 +6,20 @@ import React, { useState } from "react" // import react and specifically useStat
 const TodoInput = () => {
     // include input and setInput
     // when you use useState, you give it an initial string
-    // 
     const [input, setInput] = useState('');
-    console.log(input);
+
     const handleOnChange = (e) => {
-        // console.log('text entered changed');
         setInput(e.target.value);
+    }
+
+    const handleOnSubmit = () => {
 
     }
     return (
-        <div>
+        <div className='mb-4'>
             {/* created a value attribute for input */}
             <input type='text' value={input} onChange={handleOnChange} />
-            <button>Submit</button>
+            <button onClick={handleOnSubmit}>Submit</button>
         </div>
     )
 }

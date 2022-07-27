@@ -1,20 +1,21 @@
-// use const for function to prevent inadvertent changes.
-// export const Todo = (props) => {
-//     return (
-//         <li>{props.item} <button>Edit</button><button>Update</button> <button>Delete</button> </li>
-//     )
-
-// };
-
-
-
 const Todo = (props) => {
+    const handleCompleted = () => {
+
+    }
+
+    const handleEdit = () => {
+
+    }
+
+    const handleDelete = () => {
+
+    }
+
     return (
         <li>{props.item}
-            <input type='checkbox' />
-            <button>Edit</button>
-            <button>Update</button>
-            <button>Delete</button>
+            <input type='checkbox' onChange={handleCompleted} checked='true' />
+            <button onClick={handleEdit}>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
         </li>
     )
 
