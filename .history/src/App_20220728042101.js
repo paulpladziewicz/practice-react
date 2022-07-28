@@ -27,6 +27,7 @@ function App() {
         {/* {arr.map(elem => {
           return <Todo item={elem} /> */}
         {arr.map(elem => { return <Todo item={elem} /> })}
+        {arr.filter(elem => elem.length > 10)}
       </ul>
     </div>
   );

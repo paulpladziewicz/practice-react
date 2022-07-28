@@ -8,7 +8,7 @@ const TodoInput = () => {
     // when you use useState, you give it an initial string
     // 
     const [input, setInput] = useState('');
-    console.log(input); // input is set by setInput as it is called with each e.target.value that represent a character
+    console.log(input); // input is set 
     const handleOnChange = (e) => {
         // console.log('text entered changed');
         // console.log(e.target.value); // relevant upon striking a key

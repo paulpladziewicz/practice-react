@@ -26,7 +26,7 @@ function App() {
       <ul>
         {/* {arr.map(elem => {
           return <Todo item={elem} /> */}
-        {arr.map(elem => { return <Todo item={elem} /> })}
+        arr.map(elem => <Todo item={`$`} /> )
       </ul>
     </div>
   );

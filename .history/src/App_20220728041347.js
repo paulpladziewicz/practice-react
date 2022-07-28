@@ -24,9 +24,9 @@ function App() {
       <h1>To Do List</h1>
       <TodoInput />
       <ul>
-        {/* {arr.map(elem => {
-          return <Todo item={elem} /> */}
-        {arr.map(elem => { return <Todo item={elem} /> })}
+        {arr.map(elem => {
+          return <Todo item={elem} />
+        })}
       </ul>
     </div>
   );
