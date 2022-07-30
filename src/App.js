@@ -6,7 +6,7 @@ import TodoList from './components/TodoList'
 import React, { useEffect, useState } from 'react'
 import styles from './styles/App.module.css'
 
-const arr = ['cook', 'clean living room', 'wash dishes', 'make beds', 'take out trash'];
+{/* const arr = ['cook', 'clean living room', 'wash dishes', 'make beds', 'take out trash']; */ }
 
 function App() {
   const [data, setData] = useState([]) //useState should have an empty array as param.
@@ -23,8 +23,13 @@ function App() {
   //   // whenever data is changing the data array below will change.
   // }, [data])
 
-  const addTodo = () => {
-
+  const addTodo = (todo) => {
+    const newTodo = {
+      id: 0,
+      text: todo,
+      completed: 0
+    };
+    setData([...data, newTodo]);
   }
 
   const removeTodo = () => {
@@ -34,16 +39,16 @@ function App() {
   return (
     <div className={styles['app-container']}>
       <h1>To Do List</h1>
-      <TodoInput />
-      <TodoList />
+      {/* below onAddTodo is passing the function by reference, not invoking it. */}
+      <TodoInput onAddTodo={addTodo} />
+      <TodoList listItems={data} />
       {/*Move below to the TodoList component*/}
-      <ul>
-        {arr.map(elem => {
-          return <Todo item={elem} />
-        })}
-      </ul>
+
     </div>
   );
 }
 
 export default App;
+
+
+// passing things around is essential: ask where things go, and what is passing what.

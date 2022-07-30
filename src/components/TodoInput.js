@@ -3,7 +3,7 @@
 
 import React, { useState } from "react" // import react and specifically useState
 
-const TodoInput = () => {
+const TodoInput = (props) => {
     // include input and setInput
     // when you use useState, you give it an initial string
     const [input, setInput] = useState('');
@@ -13,7 +13,8 @@ const TodoInput = () => {
     }
 
     const handleOnSubmit = () => {
-
+        props.onAddTodo(input);
+        setInput('');
     }
     return (
         <div className='mb-4'>
