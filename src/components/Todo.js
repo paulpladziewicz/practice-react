@@ -1,6 +1,9 @@
-const Todo = (props) => {
-    const handleCompleted = () => {
+import React, { useState } from 'react'
 
+const Todo = (props) => {
+    const [checked, setChecked] = useState(false);
+    const handleCompleted = () => {
+        setChecked(!checked)
     }
 
     const handleEdit = () => {
@@ -11,9 +14,12 @@ const Todo = (props) => {
 
     }
 
+    console.log(props);
+
     return (
-        <li>{props.item}
-            <input type='checkbox' onChange={handleCompleted} checked='true' />
+        // property access question marks that helps when properties are undefined
+        <li>{props?.todo?.text}
+            <input type='checkbox' onChange={handleCompleted} checked={checked} />
             <button onClick={handleEdit}>Edit</button>
             <button onClick={handleDelete}>Delete</button>
         </li>
