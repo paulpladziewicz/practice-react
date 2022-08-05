@@ -1,9 +1,13 @@
+// imports from react
 import React, { useState } from 'react'
-
+// function for Todo takes in a param: props
 const Todo = (props) => {
+    // destructuring: declaring two variables and assigning useState with a 'false' param: does setChecked(checked) === useState(false)?
     const [checked, setChecked] = useState(false);
+    // console.log(setChecked(checked), useState(false)) // find undefined, then an array, respectively.
     const handleCompleted = () => {
         setChecked(!checked)
+
     }
 
     const handleEdit = () => {
