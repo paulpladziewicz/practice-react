@@ -1,3 +1,7 @@
-.todo-list {
+.todo-list li {
+  list-style-type: none;
+}
 
+.strike-through {
+  text-decoration: line-through;
 }
