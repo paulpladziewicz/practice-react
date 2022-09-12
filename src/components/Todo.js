@@ -4,7 +4,7 @@ import styles from '../styles/Todo.module.css'
 // 
 
 // abbrev logs to console
-const log = console.log;
+// const log = console.log;
 
 const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => { // remove props and replace with the param onRemoveTodo, todo (lowercase bc its a property), and updateTodo in curly braces
     // console.log(todo); // data.json list with keys in alphabetical order
