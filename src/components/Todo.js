@@ -19,7 +19,6 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => { // remove pro
     const handleCompleted = () => {
         setChecked(!checked);
         console.log(todo);
-
     }
 
     const handleEdit = () => {
