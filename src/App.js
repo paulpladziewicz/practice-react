@@ -77,10 +77,18 @@ function App() {
 
   // return statement
   return (
-    <div className={styles['app-container']}>
-      <h1>To Do List</h1>
+    <div className="main-container">
+      <h1>Tasks Be Gone</h1>
+          <div className={styles['app-container']}>
+      <h2>Let's Go ...</h2>
       <TodoInput onAddTodo={addTodo} onRemoveAllTodo={removeAllTodo} />
       <TodoList listItems={data} onRemoveTodo={removeTodo} strikeTodo={strikeTodo} updateTodo={updateTodo} />
+    </div>
+    <br />
+    <div className={styles['app-container']}>
+      <h2>Complete!</h2>
+      </div>    
+
     </div>
   );
 }
