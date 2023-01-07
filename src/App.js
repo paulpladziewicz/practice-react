@@ -11,10 +11,11 @@ NOTES: useState (functions like a switch; useEffect (when a component loads))
 // import Todo from './components/Todo' // no longer needed.
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
+import Complete from './components/Complete'
 import React, { useEffect, useState } from 'react'
 import styles from './styles/App.module.css'
 
-// kconst arr = ['cook', 'clean living room', 'wash dishes', 'make beds', 'take out trash'];
+// const arr = ['cook', 'clean living room', 'wash dishes', 'make beds', 'take out trash'];
 
 // abbrev logs to console
 const log = console.log;
@@ -38,14 +39,14 @@ function App() {
 
 
   const addTodo = (todo) => {
-    log(todo)
+    log(todo);
     const newTodo = {
       id: data.length + 1, // incrementation in lieu of placeholder (0).
       text: todo,
       completed: 0
     };
     setData([...data, newTodo]);
-    // log(newTodo.id)
+    log(newTodo.id)
   }
 
   // to remove tasks from the data array, an id is passed as a param.
@@ -70,24 +71,18 @@ function App() {
     }))
   }
 
-  // create a new function to strike todo
-  const strikeTodo = (todo) => {
-
-  }
 
   // return statement
   return (
     <div className="main-container">
       <h1>Tasks Be Gone</h1>
-          <div className={styles['app-container']}>
-      <h2>Let's Go ...</h2>
-      <TodoInput onAddTodo={addTodo} onRemoveAllTodo={removeAllTodo} />
-      <TodoList listItems={data} onRemoveTodo={removeTodo} strikeTodo={strikeTodo} updateTodo={updateTodo} />
-    </div>
-    <br />
-    <div className={styles['app-container']}>
-      <h2>Complete!</h2>
-      </div>    
+      <div className={styles['app-container']}>
+        <h2>Let's Go ...</h2>
+        <TodoInput onAddTodo={addTodo} onRemoveAllTodo={removeAllTodo} />
+        <TodoList listItems={data} onRemoveTodo={removeTodo} updateTodo={updateTodo} />
+      </div>
+      <br />
+      <Complete />
 
     </div>
   );

@@ -13,12 +13,11 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => { // remove pro
     const [editMode, setEditMode] = useState(false);
     // setting up useState with inputs: use empty string
     const [input, setInput] = useState(todo?.text);
-    // setting up useState with a boolean for strikes
-    // const [strike, setStrike] = useState(false);
-
-    const handleCompleted = () => {
-        setChecked(!checked);
-        console.log(todo);
+    
+    const handleComplete = (id) => {
+        if (todo?.id === id) {
+            setChecked(!checked);
+        }
     }
 
     const handleEdit = () => {
@@ -40,11 +39,6 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => { // remove pro
         // call updateTodo
         updateTodo(input, id);
         setEditMode(false);
-    }
-
-    // setting up handle for strikes
-    const handleStrikes = () => {
-        strikeTodo(todo);
     }
 
 
@@ -74,7 +68,7 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => { // remove pro
 
                             {/* after change to checked attribute: changed the value of the checked attribute to regain functionality of the checking action. */}
                             {/* set an onCLick handler for strike-through occurrences */}
-                            <input className={styles['mr-4']} type='checkbox' onChange={() => handleCompleted(todo?.id)} onClick={handleStrikes} checked={checked} />
+                            <input className={styles['mr-4']} type='checkbox' onChange={() => handleComplete(todo?.id)} checked={checked} />
                             <button className={styles['mr-4']} onClick={handleEdit}>Edit</button>
                             <button onClick={() => handleDelete(todo?.id)}>Delete</button>
                         </div>
