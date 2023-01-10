@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import Todo from './Todo'
+import TodoList from './TodoInput'
 import styles from '../styles/Complete.module.css'
 
-
-const Complete = (props) => {
-
+const Complete = ({}) => {
+    console.log();
+    
     return (
         <div className={styles['complete-div']}>
             <h2>Complete!</h2>
-            <ul className="to-do-litter">
+            <div className={styles['complete-list']}>
 
-            </ul>
-
+            </div>
         </div>
     )
 }
