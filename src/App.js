@@ -1,7 +1,7 @@
 
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
-import Complete from './components/Complete'
+import TodoComplete from './components/TodoComplete'
 import React, { useEffect, useState } from 'react'
 import styles from './styles/App.module.css'
 

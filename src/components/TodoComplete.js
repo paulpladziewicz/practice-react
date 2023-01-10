@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Todo from './Todo'
 import TodoList from './TodoInput'
-import styles from '../styles/Complete.module.css'
+import styles from '../styles/TodoComplete.module.css'
 
-const Complete = ({}) => {
+const TodoComplete = () => {
     console.log();
-    
+
     return (
         <div className={styles['complete-div']}>
             <h2>Complete!</h2>
@@ -16,4 +16,4 @@ const Complete = ({}) => {
     )
 }
 
-export default Complete
+export default TodoComplete
