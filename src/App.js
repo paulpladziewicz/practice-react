@@ -37,6 +37,10 @@ function App() {
     setData([]);
   }
 
+  const strikeTodo = (todo) => {
+
+  }
+
   const updateTodo = (input, id) => {
     setData(data.map((todo) => {
 
@@ -57,7 +61,7 @@ function App() {
         <TodoList listItems={data} onRemoveTodo={removeTodo} updateTodo={updateTodo} />
       </div>
       <br />
-      <Complete />
+      <TodoComplete />
 
     </div>
   );
