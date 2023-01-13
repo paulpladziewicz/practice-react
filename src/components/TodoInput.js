@@ -1,8 +1,5 @@
 import React, { useState } from "react"
 
-const log = console.log;
-
-
 const TodoInput = (props) => {
 
     const [input, setInput] = useState('');
@@ -13,7 +10,6 @@ const TodoInput = (props) => {
     }
 
     const handleOnSubmit = () => {
-        log(props);
         if (input === '') {
             return setError(true)
         };
@@ -23,13 +19,8 @@ const TodoInput = (props) => {
 
 
     const handleOnDeleteAll = () => {
-
         props.onRemoveAllTodo();
-
-
     }
-
-
 
     return (
         <div className='mb-4'>

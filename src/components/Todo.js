@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
 import styles from '../styles/Todo.module.css'
 
-const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {     
+const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
+    // console.log(todo);
     const [checked, setChecked] = useState(false);
     const [editMode, setEditMode] = useState(false);
-
     const [input, setInput] = useState(todo?.text);
 
     const handleComplete = (id) => {
         if (todo?.id === id) {
             setChecked(!checked);
-            
         }
     }
-
-
 
     const handleEdit = () => {
         setEditMode(true);
@@ -28,13 +25,17 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
         setInput(event.target.value);
     }
 
+    const handleStrike = () => {
+        strikeTodo();
+    }
+
     const handleUpdate = (id) => {
         updateTodo(input, id);
         setEditMode(false);
     }
 
     return (
-       
+
         <div className={styles['todo']}>
             {
                 !editMode ?
@@ -42,9 +43,11 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
                         <div>{todo?.text}</div>
 
                         <div className={`${styles['buttons']}`}>
-                         
-                            <input className={styles['mr-4']} type='checkbox' onChange={() => handleComplete(todo?.id)} checked={checked} />
+                            {/* onChange vs onClick */}
+                            <input className={styles['mr-4']} type='checkbox' onChange={() => handleComplete(todo?.id)} onClick={() => handleStrike()} checked={checked} />
+
                             <button className={styles['mr-4']} onClick={handleEdit}>Edit</button>
+
                             <button onClick={() => handleDelete(todo?.id)}>Delete</button>
                         </div>
                     </li> :
@@ -61,3 +64,5 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
 };
 
 export default Todo
+
+
