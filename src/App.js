@@ -37,8 +37,8 @@ function App() {
     setData([]);
   }
 
-  const strikeTodo = (todo) => {
-
+  const strikeTodo = (id) => {
+    setData(data.filter((todo) => todo.id !== id))
   }
 
   const updateTodo = (input, id) => {
@@ -58,7 +58,7 @@ function App() {
       <div className={styles['app-container']}>
         <h2>Let's Go ...</h2>
         <TodoInput onAddTodo={addTodo} onRemoveAllTodo={removeAllTodo} />
-        <TodoList listItems={data} onRemoveTodo={removeTodo} updateTodo={updateTodo} />
+        <TodoList listItems={data} onRemoveTodo={removeTodo} strikeTodo={strikeTodo} updateTodo={updateTodo} />
       </div>
       <br />
       <TodoComplete />
