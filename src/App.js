@@ -15,7 +15,6 @@ function App() {
       .then(res => res.json())
       .then(res => setData(res.data))
   }, []);
-  console.log(data);
 
   // todo (text/task action) is made when newTodo is created.
   const addTodo = (todo) => {
@@ -37,11 +36,13 @@ function App() {
     setData([]);
   }
 
+  // create set strikeTodo within parent component for universal applicability; ? of param pending
   const strikeTodo = (id) => {
-    setData(data.filter((todo) => todo.id !== id))
+    // setData(data.filter((todo) => todo?.id !== id))
   }
 
   const updateTodo = (input, id) => {
+    console.log(input, id);
     setData(data.map((todo) => {
 
       if (todo?.id === id) {
@@ -52,6 +53,7 @@ function App() {
     }))
   }
 
+
   return (
     <div className="main-container">
       <h1>Tasks Be Gone</h1>
@@ -61,6 +63,7 @@ function App() {
         <TodoList listItems={data} onRemoveTodo={removeTodo} strikeTodo={strikeTodo} updateTodo={updateTodo} />
       </div>
       <br />
+      {/* same props as within component */}
       <TodoComplete />
 
     </div>
