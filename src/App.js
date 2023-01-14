@@ -36,8 +36,8 @@ function App() {
     // FIGURE OUT WHY THE SECOND PARAMETER OF useEffect IS AN EMPTY ARRAY: what about the dependencies?
   }, []);
 
-
-  const addTodo = (todo) => {
+cleardlear
+  const cleardlear(todo) => {
     log(todo)
     const newTodo = {
       id: data.length + 1, // incrementation in lieu of placeholder (0).
@@ -61,7 +61,7 @@ function App() {
   // create a new function to update Todo
   const updateTodo = (input, id) => {
     setData(data.map((todo) => {
-      log(todo.id, id); // (assigned entry id, id of clicked entry)
+      log(todo.id, id); // (assigned entry id, id of clicked  
       if (todo?.id === id) { // requiring a strict match
         todo.text = input; // input replaces previous todo.text
       }
