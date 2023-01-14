@@ -43,6 +43,7 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
                         <div>{todo?.text}</div>
 
                         <div className={`${styles['buttons']}`}>
+
                             {/* onChange vs onClick */}
                             <input className={styles['mr-4']} type='checkbox' onChange={() => handleComplete(todo?.id)} onClick={() => handleStrike(todo?.id)} checked={checked} />
 

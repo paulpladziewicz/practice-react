@@ -39,7 +39,6 @@ function App() {
   // create set strikeTodo within parent component for universal applicability; ? of param pending
   const strikeTodo = (id) => {
     // setData(data.filter((todo) => todo?.id !== id))
-
   }
 
   const updateTodo = (input, id) => {
