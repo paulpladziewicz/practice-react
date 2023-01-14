@@ -14,8 +14,6 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
         }
     }
 
-
-
     const handleEdit = () => {
         setEditMode(true);
     }
@@ -28,6 +26,12 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
         setInput(event.target.value);
     }
 
+    const handleStrike = (todo) => {
+        if (!checked) {
+            strikeTodo(todo.id)
+    }
+
+}
     const handleUpdate = (id) => {
         updateTodo(input, id);
         setEditMode(false);
@@ -43,7 +47,7 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
 
                         <div className={`${styles['buttons']}`}>
                          
-                            <input className={styles['mr-4']} type='checkbox' onChange={() => handleComplete(todo?.id)} checked={checked} />
+                            <input className={styles['mr-4']} type='checkbox' onChange={() => handleComplete(todo?.id)} onClick={() => handleStrike(todo)} checked={checked} />
                             <button className={styles['mr-4']} onClick={handleEdit}>Edit</button>
                             <button onClick={() => handleDelete(todo?.id)}>Delete</button>
                         </div>
