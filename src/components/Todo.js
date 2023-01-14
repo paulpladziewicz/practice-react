@@ -25,8 +25,8 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
         setInput(event.target.value);
     }
 
-    const handleStrike = () => {
-        strikeTodo();
+    const handleStrike = (id) => {
+        onRemoveTodo(id);
     }
 
     const handleUpdate = (id) => {
@@ -44,7 +44,7 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
 
                         <div className={`${styles['buttons']}`}>
                             {/* onChange vs onClick */}
-                            <input className={styles['mr-4']} type='checkbox' onChange={() => handleComplete(todo?.id)} onClick={() => handleStrike()} checked={checked} />
+                            <input className={styles['mr-4']} type='checkbox' onChange={() => handleComplete(todo?.id)} onClick={() => handleStrike(todo?.id)} checked={checked} />
 
                             <button className={styles['mr-4']} onClick={handleEdit}>Edit</button>
 
