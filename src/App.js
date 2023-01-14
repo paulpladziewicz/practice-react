@@ -16,14 +16,8 @@ function App() {
       .then(res => setData(res.data))
   }, []);
 
-<<<<<<< HEAD
-cleardlear
-  const cleardlear(todo) => {
-    log(todo)
-=======
   // todo (text/task action) is made when newTodo is created.
   const addTodo = (todo) => {
->>>>>>> 9a6a1a71371432b68f0d31450b56fb99c26bb7b3
     const newTodo = {
       id: data.length + 1,
       text: todo,
@@ -50,15 +44,9 @@ cleardlear
   const updateTodo = (input, id) => {
     console.log(input, id);
     setData(data.map((todo) => {
-<<<<<<< HEAD
-      log(todo.id, id); // (assigned entry id, id of clicked  
-      if (todo?.id === id) { // requiring a strict match
-        todo.text = input; // input replaces previous todo.text
-=======
 
       if (todo?.id === id) {
         todo.text = input;
->>>>>>> 9a6a1a71371432b68f0d31450b56fb99c26bb7b3
       }
 
       return todo
