@@ -2,7 +2,6 @@ import Todo from './Todo'
 import styles from '../styles/TodoList.module.css'
 
 const TodoList = (props) => {
-
     const { onRemoveTodo, strikeTodo, updateTodo } = props;
 
     return (

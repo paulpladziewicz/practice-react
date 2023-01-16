@@ -1,16 +1,13 @@
 
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
-import TodoComplete from './components/TodoComplete'
+import TodoCompleteList from './components/TodoCompleteList'
 import React, { useEffect, useState } from 'react'
 import styles from './styles/App.module.css'
-
-const log = console.log;
 
 function App() {
   // set data to data.json
   const [data, setData] = useState([]); //
-  const [completeData, setCompleteData] = useState([])
   useEffect(() => {
 
     fetch('https://d1qy7lc15wxwmt.cloudfront.net/data.json')
@@ -21,7 +18,6 @@ function App() {
 
   // todo (text/task action) is made when newTodo is created.
   const addTodo = (todo) => {
-    log(`todo: ${todo}`);
     const newTodo = {
       id: data.length + 1,
       text: todo,
@@ -41,14 +37,8 @@ function App() {
   }
 
   // create set strikeTodo within parent component for universal applicability; ? of param pending
-  const strikeTodo = (complete) => {
-    log(`complete: ${complete}`);
-    // setData(data.filter((todo) => todo?.id !== id))
-    const completeTodo = {
-      text: complete,
-      id: data.length + 1
-    };
-    setCompleteData([...data, completeTodo]);
+  const strikeTodo = () => {
+
   }
 
   const updateTodo = (input, id) => {
@@ -58,11 +48,9 @@ function App() {
       if (todo?.id === id) {
         todo.text = input;
       }
-
       return todo
     }))
   }
-
 
   return (
     <div className="main-container">
@@ -74,7 +62,7 @@ function App() {
       </div>
       <br />
       {/* same props as within component */}
-      <TodoComplete listItems={data} strikeTodo={strikeTodo} onRemoveTodo={removeTodo} />
+      <TodoCompleteList strikeTodo={strikeTodo} onRemoveTodo={removeTodo} />
 
     </div>
   );

@@ -9,7 +9,7 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
     const handleComplete = (id) => {
         if (todo?.id === id) {
             setChecked(!checked);
-            onRemoveTodo(id);
+            // onRemoveTodo(id);
         }
     }
 
