@@ -15,6 +15,3 @@
 .buttons {
   display: flex;
 }
-.strike-through {
-  text-decoration: line-through;
-}

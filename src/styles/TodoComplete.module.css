@@ -1,5 +1,15 @@
 .complete {
-  text-decoration: line-through;
+  margin-bottom: 1rem;
+}
+
+.complete li {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.complete-buttons {
+  opacity: 0;
 }
 
 .mr-4 {

@@ -1,5 +1,5 @@
 .complete-list {
-  height: 8rem;
-  background-color: lightblue;
+  /* height: 8rem; */
+  text-decoration: line-through;
   list-style-type: none;
 }

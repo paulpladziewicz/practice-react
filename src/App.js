@@ -16,7 +16,7 @@ function App() {
       .then(res => setData(res.data))
   }, []);
 
-  // todo (text/task action) is made when newTodo is created.
+  // todo (text/task action) is made when newTodo is created. todo is a param within addTodo.
   const addTodo = (todo) => {
     const newTodo = {
       id: data.length + 1,
@@ -27,22 +27,26 @@ function App() {
     setData([...data, newTodo]);
   }
 
-
   const removeTodo = (id) => {
-    setData(data.filter((todo) => todo.id !== id));
+    setData(data.filter((todo) => todo?.id !== id));
   }
 
   const removeAllTodo = () => {
     setData([]);
   }
 
-  // create set strikeTodo within parent component for universal applicability; ? of param pending
-  const strikeTodo = () => {
-
+  const strikeTodo = (id) => {
+    // setData(data.filter((todo) => todo?.id !== id));
+    setData(data.map((todo) => {
+      if (todo.id === id) {
+        todo.completed = 1;
+        console.log(todo);
+      };
+      return todo
+    }))
   }
 
   const updateTodo = (input, id) => {
-    console.log(input, id);
     setData(data.map((todo) => {
 
       if (todo?.id === id) {
@@ -58,11 +62,12 @@ function App() {
       <div className={styles['app-container']}>
         <h2>Let's Go ...</h2>
         <TodoInput onAddTodo={addTodo} onRemoveAllTodo={removeAllTodo} />
-        <TodoList listItems={data} onRemoveTodo={removeTodo} updateTodo={updateTodo} />
+        <TodoList listItems={data} removeTodo={removeTodo} updateTodo={updateTodo} strikeTodo={strikeTodo} />
+        {/* </div> */}
+        <br />
+        {/* same props as within component */}
+        <TodoCompleteList listItems={data} strikeTodo={strikeTodo} />
       </div>
-      <br />
-      {/* same props as within component */}
-      <TodoCompleteList strikeTodo={strikeTodo} onRemoveTodo={removeTodo} />
 
     </div>
   );

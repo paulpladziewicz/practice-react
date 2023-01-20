@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/Todo.module.css'
 
-const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
+const Todo = ({ removeTodo, strikeTodo, todo, updateTodo }) => {
     const [checked, setChecked] = useState(false);
     const [editMode, setEditMode] = useState(false);
     const [input, setInput] = useState(todo?.text);
@@ -9,8 +9,8 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
     const handleComplete = (id) => {
         if (todo?.id === id) {
             setChecked(!checked);
-            // onRemoveTodo(id);
-        }
+            strikeTodo(id);
+        };
     }
 
     const handleEdit = () => {
@@ -18,7 +18,7 @@ const Todo = ({ onRemoveTodo, strikeTodo, todo, updateTodo }) => {
     }
 
     const handleDelete = (id) => {
-        onRemoveTodo(id);
+        removeTodo(id);
     }
 
     const handleInputChange = (event) => {
